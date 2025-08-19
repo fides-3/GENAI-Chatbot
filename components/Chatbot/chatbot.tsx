@@ -34,9 +34,8 @@ export default function Chatbot() {
         
     <div className="max-w-lg mx-auto mt-10 border rounded shadow bg-white">
       <Header/>
-      
+
       <div className="h-96 space-x-2 overflow-y-auto border-b mb-2 p-2">
-        
         
         {messages.map((m, i) => (
         
@@ -60,23 +59,9 @@ export default function Chatbot() {
           : "bg-gray-200 text-black"
       }`}
     >
-
-             <p>{m.text}</p> 
-
-
-             
-          
-            
+             <p>{m.text}</p>             
     </div>
-
-
-
-
-           
-           
-           
-           
-          </div>
+    </div>
         ))}
       </div>
       <ChatInput onSendAction={handleSend} />
