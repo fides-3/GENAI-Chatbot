@@ -32,7 +32,7 @@ export default function Chatbot() {
     <>
     
         
-    <div className="max-w-lg mx-auto mt-10 border rounded shadow bg-white">
+    <div className="max-w-lg mx-auto mt-10 border rounded shadow-md bg-white">
       <Header/>
 
       <div className="h-96 space-x-2 overflow-y-auto border-b mb-2 p-2">
