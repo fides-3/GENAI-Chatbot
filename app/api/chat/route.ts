@@ -13,9 +13,9 @@ export async function POST(req: Request) {
     const reply = result.response.text();
 
     return NextResponse.json({ reply });
-  } catch (error: any) {
+  } catch (error) {
     return NextResponse.json(
-      { error: error.message || "Something went wrong" },
+      { error:"Something went wrong" },
       { status: 500 }
     );
   }
