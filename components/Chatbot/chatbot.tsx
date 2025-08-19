@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ChatInput from "@/components/Chatbot/ui/chat-input";
-import { sendMessage } from "@/lib/sendMessage";
+// import { sendMessage } from "@/lib/sendMessage";
 import { RiRobot3Line } from "react-icons/ri";
 import {CgProfile} from "react-icons/cg"
 import Header from "./ui/header";
@@ -9,6 +9,17 @@ import Header from "./ui/header";
 
 export default function Chatbot() {
   const [messages, setMessages] = useState<{ sender: "user" | "bot"; text: string }[]>([]);
+
+  async function sendMessage(message: string) {
+  const res = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message }),
+  });
+
+  const data = await res.json();
+  return data.reply;
+}
 
   const handleSend = async (msg: string) => {
     setMessages((prev) => [...prev, { sender: "user", text: msg }]);
